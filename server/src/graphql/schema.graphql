@@ -1,0 +1,93 @@
+# union AnimalUnion = Dog | Cat
+
+interface AnimalInterface {
+    animal: String
+    name: String!
+}
+
+type Dog implements AnimalInterface{
+    animal: String
+    name: String!
+    hair: String!
+}
+
+type Cat implements AnimalInterface {
+    animal: String
+    name: String!
+    paws: String!
+}
+
+#
+type Query {
+    agent(id: ID!): User!
+    agents(name: String, age: Int): [User!]!
+    posts: [Post!]!
+    post(id: ID!): Post!
+    pictures: [Picture!]!
+
+#    getAnimal: AnimalUnion!
+    getAnimal: AnimalInterface!
+}
+
+type Mutation {
+    createAgent(data: CreateAgentInput!): User!
+    deleteAgent(id: ID!): Boolean!
+    updateAgent(id:ID!, data: UpdateAgentInput!): User!
+    createPost(title: String!, content: String!, author: ID, picture: String, status: PostStatus): Post!
+    deletePost(id: ID!): Boolean!
+}
+
+type Picture {
+    id: ID!
+    path: String!
+    author: User!
+    post: Post!
+}
+
+type User {
+    id: ID!
+    name: String!
+    age: Int
+    married: Boolean!
+    average: Float
+    posts: [Post!]!
+    pictures: [Picture!]
+    status: AgentState!
+}
+
+type Post {
+    id: ID!
+    title: String
+    content: String
+    author: User
+    picture: Picture!
+    status: PostStatus
+}
+
+input CreateAgentInput {
+    name: String!
+    age: Int!
+    married: Boolean!
+    average: Float
+    status: AgentState
+}
+
+input UpdateAgentInput {
+    name: String
+    age: Int
+    married: Boolean
+    average: Float
+    status: AgentState
+}
+
+enum AgentState {
+    active
+    not_active
+    trainee
+    guest
+}
+
+enum PostStatus {
+    PUBLISHED
+    DRAFT
+}
