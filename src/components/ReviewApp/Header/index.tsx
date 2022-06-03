@@ -7,7 +7,7 @@ export const Header = () => {
         <Link to="/">Feedback UI</Link>
       </h1>
       <nav>
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/reviews-about">About</NavLink>
         <NavLink to="/reviews">Reviews</NavLink>
       </nav>
     </header>

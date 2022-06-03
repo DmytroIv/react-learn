@@ -8,3 +8,4 @@ export * from './ReviewToolbar';
 export * from './ReviewForm';
 export * from './Review';
 export * from './ReviewList';
+export * from './Layout';

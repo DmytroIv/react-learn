@@ -3,8 +3,8 @@ import { Card } from '../Card';
 import { Radio } from '../Radio';
 import { Button } from '../Button';
 import { IReviewFormProps } from './Review.props';
-import { IReview } from '../../interfaces/Review.interface';
-import { ReviewContext } from '../../context/review.context';
+import { IReview } from '../../../interfaces/Review.interface';
+import { ReviewContext } from '../../../context/review.context';
 import { v4 as uuidV4 } from 'uuid';
 
 export const ReviewForm = ({ ...props }: IReviewFormProps) => {
@@ -75,12 +75,12 @@ export const ReviewForm = ({ ...props }: IReviewFormProps) => {
           ))}
         </div>
         <div className="control submit-control">
-          <input value={text} onChange={textOnChangeHandler} type="text" />
-          <Button type="submit" className="btn">
+          <input className="review-input" value={text} onChange={textOnChangeHandler} type="text" />
+          <Button type="submit" className="review-btn">
             Send
           </Button>
         </div>
-        {error && <p className="error-msg">{error}</p>}
+        {error && <p className="review-error-msg">{error}</p>}
       </form>
     </Card>
   );

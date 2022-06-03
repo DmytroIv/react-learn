@@ -1,4 +1,77 @@
-.card {
+:root {
+	--primary: #6940e1;
+	--secondry: #e7c658;
+	--red: rgb(231, 74, 74);
+	--green: rgb(71, 176, 48);
+}
+
+.review-page {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+	'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+	sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: rgba(105, 64, 225, 0.12);
+	overflow-x: hidden;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.review-page * {
+	box-sizing: border-box;
+}
+
+.review-page .header,
+.review-page .footer {
+	text-align: center;
+	padding: 8px 16px;
+	background-color: var(--primary);
+	color: white;
+}
+
+.review-page .main {
+	max-width: 960px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 16px;
+	flex-grow: 1;
+}
+
+.review-page .header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.review-page .header nav {
+	display: flex;
+	gap: 16px;
+}
+
+.review-page .header a {
+	color: white;
+	text-decoration: none;
+}
+
+.review-page .header h1 a {
+	letter-spacing: 1px;
+}
+
+.review-page .header nav a {
+	font-size: 20px;
+	padding-bottom: 1px;
+	background: linear-gradient(90deg, currentcolor, currentcolor) no-repeat bottom left / 0 2px;
+	transition: 0.3s all;
+}
+
+.review-page .header nav a.active,
+.review-page .header nav a:hover {
+	background-size: 100% 2px;
+}
+
+.review-card {
 	padding: 20px;
 	margin: 20px 0;
 	background-color: white;
@@ -7,7 +80,11 @@
 	position: relative;
 }
 
-.btn {
+.review-card p {
+	margin: 16px 0;
+}
+
+.review-page .review-btn {
 	padding: 6px 10px;
 	font-size: 18px;
 	font-weight: 700;
@@ -21,17 +98,17 @@
 	transition: 0.3s all;
 }
 
-.btn:hover {
+.review-page .review-btn:hover {
 	background-color: white;
 	color: var(--primary);
 	transform: scale(1.05);
 }
 
-.btn:active {
+.review-page .review-btn:active {
 	box-shadow: none;
 }
 
-.btn-ico {
+.review-page .review-btn-ico {
 	font-size: 36px;
 	line-height: 20px;
 	padding: 4px;
@@ -45,29 +122,29 @@
 	transition: 0.3s all;
 }
 
-.btn-edit {
+.review-page .review-btn-edit {
 	font-size: 18px;
 	background-color: var(--green);
 	right: 36px;
 	top: -6px;
 }
 
-.btn-remove {
+.review-page .review-btn-remove {
 	background-color: var(--red);
 	right: -6px;
 	top: -6px;
 	opacity: 0.75;
 }
 
-.btn-ico {
+.review-page .review-btn-ico {
 	box-shadow: -3px -3px 8px 1px rgba(0,0,0, 0.1);
 }
 
-.btn-edit:hover {
+.review-page .review-btn-edit:hover {
 	transform: scale(1.1);
 }
 
-.btn-remove:hover {
+.review-page .review-btn-remove:hover {
 	opacity: 1;
 	transform: scale(0.9);
 }
@@ -88,7 +165,7 @@
 	height: 30px;
 }
 
-input {
+.review-input {
 	padding: 6px 10px;
 	font-size: 16px;
 	line-height: 20px;
@@ -97,22 +174,20 @@ input {
 	box-shadow: 3px 3px 8px 1px rgba(0,0,0, 0.1);
 }
 
-.error-msg {
+.review-error-msg {
 	color: var(--red);
 	margin-top: 8px;
 	margin-bottom: 0;
 	font-size: 14px;
 }
 
-[tabindex]:focus,
-a:focus,
-button:focus,
-input:focus {
+.review-page [tabindex]:focus,
+.review-page a:focus,
+.review-page button:focus,
+.review-page input:focus {
 	outline: transparent;
 	box-shadow: 0 0 3px 2px var(--green);
 }
-
-.control {}
 
 .submit-control {
 	position: relative;
@@ -123,7 +198,7 @@ input:focus {
 	padding: 16px 100px 16px 10px;
 }
 
-.submit-control .btn {
+.submit-control .review-btn {
 	position: absolute;
 	right: 14px;
 	top: 10px;
@@ -198,6 +273,6 @@ input[type="radio"]:checked + span {
 	gap: 20px;
 }
 
-.ratings-list .card {
+.ratings-list .review-card {
 	margin: 0;
 }
