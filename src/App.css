@@ -1,0 +1,203 @@
+.card {
+	padding: 20px;
+	margin: 20px 0;
+	background-color: white;
+	box-shadow: 3px 3px 8px 1px rgba(0,0,0, 0.1);
+	border-radius: 2px;
+	position: relative;
+}
+
+.btn {
+	padding: 6px 10px;
+	font-size: 18px;
+	font-weight: 700;
+	color: white;
+	background-color: var(--primary);
+	border: 2px solid var(--primary);
+	border-radius: 2px;
+	box-shadow: 3px 3px 8px 1px rgba(0,0,0, 0.1);
+	cursor: pointer;
+	line-height: 20px;
+	transition: 0.3s all;
+}
+
+.btn:hover {
+	background-color: white;
+	color: var(--primary);
+	transform: scale(1.05);
+}
+
+.btn:active {
+	box-shadow: none;
+}
+
+.btn-ico {
+	font-size: 36px;
+	line-height: 20px;
+	padding: 4px;
+	border-radius: 4px;
+	border: none;
+	color: white;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	cursor: pointer;
+	transition: 0.3s all;
+}
+
+.btn-edit {
+	font-size: 18px;
+	background-color: var(--green);
+	right: 36px;
+	top: -6px;
+}
+
+.btn-remove {
+	background-color: var(--red);
+	right: -6px;
+	top: -6px;
+	opacity: 0.75;
+}
+
+.btn-ico {
+	box-shadow: -3px -3px 8px 1px rgba(0,0,0, 0.1);
+}
+
+.btn-edit:hover {
+	transform: scale(1.1);
+}
+
+.btn-remove:hover {
+	opacity: 1;
+	transform: scale(0.9);
+}
+
+.rating-number {
+	position: absolute;
+	left: -6px;
+	top: -6px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 22px;
+	border-radius: 4px;
+	font-weight: 700;
+	background-color: var(--primary);
+	width: 30px;
+	height: 30px;
+}
+
+input {
+	padding: 6px 10px;
+	font-size: 16px;
+	line-height: 20px;
+	border: 2px solid var(--primary);
+	border-radius: 2px;
+	box-shadow: 3px 3px 8px 1px rgba(0,0,0, 0.1);
+}
+
+.error-msg {
+	color: var(--red);
+	margin-top: 8px;
+	margin-bottom: 0;
+	font-size: 14px;
+}
+
+[tabindex]:focus,
+a:focus,
+button:focus,
+input:focus {
+	outline: transparent;
+	box-shadow: 0 0 3px 2px var(--green);
+}
+
+.control {}
+
+.submit-control {
+	position: relative;
+}
+
+.submit-control input {
+	width: 100%;
+	padding: 16px 100px 16px 10px;
+}
+
+.submit-control .btn {
+	position: absolute;
+	right: 14px;
+	top: 10px;
+}
+
+label {
+	cursor: pointer;
+	display: table;
+}
+
+input[type="radio"] {
+	position: absolute;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+
+input[type="radio"] + span {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 4px;
+	background-color: gray;
+	color: white;
+	border: 2px solid transparent;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 20px;
+	transform: scale(1);
+	transition: 0.3s all;
+}
+
+input[type="radio"] + span:hover {
+	box-shadow: 3px 3px 8px 1px rgba(0,0,0, 0.1);
+	border: 2px solid var(--primary);
+	transform: scale(1.2);
+}
+
+input[type="radio"]:checked + span {
+	background-color: var(--primary);
+}
+
+.control-rating {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 20px -5px;
+}
+
+.control-rating label {
+	margin: 5px;
+}
+
+.ratings-toolbar {
+	display: flex;
+	justify-content: space-between;
+	gap: 16px;
+	text-transform: uppercase;
+}
+
+.ratings-toolbar span + span {
+	padding-left: 16px;
+}
+
+.ratings-list {
+	list-style: none;
+	margin: 0 0 30px;
+	padding: 0;
+	display: grid;
+	gap: 20px;
+}
+
+.ratings-list .card {
+	margin: 0;
+}
