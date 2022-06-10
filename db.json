@@ -1,9 +1,24 @@
 {
   "reviews": [
     {
-      "id": "3237a99a-0f15-4694-914d-4311161c1f29",
-      "text": "1",
-      "rating": 1
+      "id": "e4b9a068-87a5-4c1e-95b6-6515c1f067fe",
+      "text": "mmm",
+      "rating": 7
+    },
+    {
+      "id": "2d5acee1-6672-43c2-8c87-7dd7d398bd5c",
+      "text": "ppp",
+      "rating": 5
+    },
+    {
+      "id": "ca0bdc8f-eaba-45c1-98a5-ff2c2330edc8",
+      "text": "aaa",
+      "rating": 3
+    },
+    {
+      "id": "8f6ba183-15e1-4845-8a28-78b86e41803d",
+      "text": "kkk",
+      "rating": 5
     }
   ]
 }

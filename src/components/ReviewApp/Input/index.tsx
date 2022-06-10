@@ -1,5 +1,5 @@
 import { IInputProps } from './Input.props';
 
-export const Input = ({}: IInputProps) => {
-  return <input type="text" />;
+export const Input = ({ ...props }: IInputProps) => {
+  return <input {...props} />;
 };

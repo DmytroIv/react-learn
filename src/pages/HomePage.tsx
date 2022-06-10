@@ -2,11 +2,9 @@ import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="container max-w-2xl my-5">
+      <h1 className="text-3xl text-center mb-3">Home page</h1>
       <ol>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
         <li>
           <Link to="/reviews">Reviews</Link>
         </li>

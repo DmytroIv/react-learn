@@ -2,6 +2,7 @@ import { useState, FormEvent, ChangeEvent, useContext, useEffect } from 'react';
 import { Card } from '../Card';
 import { Radio } from '../Radio';
 import { Button } from '../Button';
+import { Input } from '../Input';
 import { IReviewFormProps } from './Review.props';
 import { IReview } from '../../../interfaces/Review.interface';
 import { ReviewContext } from '../../../context/review.context';
@@ -75,7 +76,7 @@ export const ReviewForm = ({ ...props }: IReviewFormProps) => {
           ))}
         </div>
         <div className="control submit-control">
-          <input className="review-input" value={text} onChange={textOnChangeHandler} type="text" />
+          <Input className="review-input" value={text} onChange={textOnChangeHandler} type="text" />
           <Button type="submit" className="review-btn">
             Send
           </Button>

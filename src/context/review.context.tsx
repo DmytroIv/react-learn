@@ -1,5 +1,5 @@
 import { PropsWithChildren, createContext, useState, useEffect, useCallback } from 'react';
-import { IReview } from '../interfaces/Review.interface';
+import { IReview } from '@/interfaces/Review.interface';
 import { postReview, getReviews, putReview, deleteReview } from '../api/reviews';
 
 const initReviews: IReview[] = [];
@@ -35,7 +35,7 @@ export const ReviewContextProvider = ({ children }: PropsWithChildren<{}>): JSX.
 
   useEffect(() => {
     getInitialReviews();
-  }, []);
+  }, [getInitialReviews]);
 
   const removeReview = async (id: string) => {
     const res = await deleteReview(id);

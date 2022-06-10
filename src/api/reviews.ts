@@ -1,4 +1,4 @@
-import { IReview } from '../interfaces/Review.interface';
+import { IReview } from '@/interfaces/Review.interface';
 
 const apiReviews = 'http://localhost:3001/reviews';
 
