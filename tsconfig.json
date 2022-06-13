@@ -3,12 +3,14 @@
     "baseUrl": "src",
     "paths": {
       "@/*": ["./*"],
-      "@/api/*": ["api/*"],
+      "@/firebase/*": ["firebase/*"],
       "@/components/*": ["components/*"],
       "@/styles/*": ["styles/*"],
       "@/helpers/*": ["helpers/*"],
       "@/pages/*": ["pages/*"],
-      "@/interfaces/*": ["interfaces/*"]
+      "@/interfaces/*": ["interfaces/*"],
+      "@/hooks/*": ["hooks/*"],
+      "@/assets/*": ["assets/*"]
     },
     "target": "es5",
     "lib": [

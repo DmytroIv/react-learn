@@ -1,4 +1,0 @@
-export enum ALERT_ACTIONS {
-  ALERT_SHOW = 'ALERT_SHOW',
-  ALERT_HIDE = 'ALERT_HIDE',
-}

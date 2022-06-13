@@ -1,9 +1,0 @@
-export { Layout } from '@/components/GithubFinderApp/Layout';
-export { Spinner } from '@/components/GithubFinderApp/Spinner';
-export { UserResults } from '@/components/GithubFinderApp/UserResults';
-export { UserItem } from '@/components/GithubFinderApp/UserItem';
-export { UserSearch } from '@/components/GithubFinderApp/UserSearch';
-export { Alert } from '@/components/GithubFinderApp/Alert';
-export { Loader } from '@/components/GithubFinderApp/Loader';
-export { RepoList } from '@/components/GithubFinderApp/RepoList';
-export { RepoItem } from '@/components/GithubFinderApp/RepoItem';
