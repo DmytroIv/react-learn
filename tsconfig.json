@@ -2,8 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/client*": ["./client*"],
-      "@/server*": ["./server*"]
+      "@/client*": ["./client*"]
     },
     "target": "es5",
     "lib": [

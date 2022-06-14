@@ -1,5 +1,5 @@
 import { Response } from 'express';
-import asyncHandler from 'express-async-handler';
+const asyncHandler = require('express-async-handler');
 import { IUser, TypedRequestUser } from '../interfaces/user.interface';
 
 import User from '../models/userModel';

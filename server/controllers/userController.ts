@@ -1,14 +1,14 @@
 import { Response } from 'express';
-import asyncHandler from 'express-async-handler';
-import bcrypt from 'bcryptjs';
-import jwt, { Secret } from 'jsonwebtoken';
+const asyncHandler = require('express-async-handler');
+const bcrypt = require('bcryptjs');
+import { sign, Secret } from 'jsonwebtoken';
 import { IUser, TypedRequestUser } from '../interfaces/user.interface';
 import User from '../models/userModel';
 
 // @desc    Register a new user
 // @route   /api/users
 // @access  Public
-export const registerUser = asyncHandler(async (req, res) => {
+export const registerUser = asyncHandler(async (req: TypedRequestUser<IUser>, res: Response) => {
   const { name, email, password } = req.body;
 
   // Validation
@@ -52,7 +52,7 @@ export const registerUser = asyncHandler(async (req, res) => {
 // @desc    Login a user
 // @route   /api/users/login
 // @access  Public
-export const loginUser = asyncHandler(async (req, res) => {
+export const loginUser = asyncHandler(async (req: TypedRequestUser<IUser>, res: Response) => {
   const { email, password } = req.body;
 
   const user = await User.findOne({ email });
@@ -89,7 +89,7 @@ export const getMe = asyncHandler(async (req: TypedRequestUser<IUser>, res: Resp
 // Generate token
 export const generateToken = (id: string) => {
   const secret: Secret = process.env.JWT_SECRET || '';
-  return jwt.sign({ id }, secret, {
+  return sign({ id }, secret, {
     expiresIn: '30d',
   });
 };

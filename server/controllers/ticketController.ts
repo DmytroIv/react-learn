@@ -1,5 +1,5 @@
 import { Response } from 'express';
-import asyncHandler from 'express-async-handler';
+const asyncHandler = require('express-async-handler');
 
 import User from '../models/userModel';
 import Ticket from '../models/ticketModel';

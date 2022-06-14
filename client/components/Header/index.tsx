@@ -1,25 +1,47 @@
-import { Link, NavLink } from 'react-router-dom';
-import { GoHome } from 'react-icons/go';
-import './Header.css';
+import { FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout, reset } from '@/client/features/auth/authSlice';
 
 export const Header = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { user } = useSelector((state: any) => state.auth);
+
+  const onLogout = () => {
+    // @ts-ignore
+    dispatch(logout());
+    dispatch(reset());
+    navigate('/');
+  };
+
   return (
     <header className="header">
-      <div className="header-container">
-        <div className="logo">
-          <Link to="/">
-            <GoHome className="inline pr-2 text-3xl" />
-          </Link>
-        </div>
-        <nav>
-          <NavLink className="header-link" to="/sign-in">
-            Sign In
-          </NavLink>
-          <NavLink className="header-link" to="/Sign-up">
-            Sign Up
-          </NavLink>
-        </nav>
+      <div className="logo">
+        <Link to="/">Support Desk</Link>
       </div>
+      <ul>
+        {user ? (
+          <li>
+            <button className="btn" onClick={onLogout}>
+              <FaSignOutAlt /> Logout
+            </button>
+          </li>
+        ) : (
+          <>
+            <li>
+              <Link to="/login">
+                <FaSignInAlt /> Login
+              </Link>
+            </li>
+            <li>
+              <Link to="/register">
+                <FaUser /> Register
+              </Link>
+            </li>
+          </>
+        )}
+      </ul>
     </header>
   );
 };
