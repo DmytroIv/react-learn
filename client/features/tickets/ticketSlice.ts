@@ -151,7 +151,7 @@ export const ticketSlice = createSlice({
       })
       .addCase(closeTicket.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.tickets.map((ticket) => (ticket._id === action.payload._id ? (ticket.status = 'closed') : ticket));
+        state.tickets.map((ticket) => (ticket._id === action.payload?._id ? (ticket.status = 'closed') : ticket));
       });
   },
 });

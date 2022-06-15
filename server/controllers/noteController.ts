@@ -20,7 +20,7 @@ export const getNotes = asyncHandler(async (req: TypedRequestUser<IUser>, res: R
 
   const ticket = await Ticket.findById(req.params.ticketId);
 
-  if (ticket.user.toString() !== req.user?._id) {
+  if (ticket.user.toString() !== req.user?._id.toString()) {
     res.status(401);
     throw new Error('User not authorized');
   }
@@ -44,7 +44,7 @@ export const addNote = asyncHandler(async (req: TypedRequestUser<IUser>, res: Re
 
   const ticket = await Ticket.findById(req.params.ticketId);
 
-  if (ticket.user.toString() !== req.user?._id) {
+  if (ticket.user.toString() !== req.user?._id.toString()) {
     res.status(401);
     throw new Error('User not authorized');
   }

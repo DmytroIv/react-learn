@@ -34,14 +34,14 @@ export const getTicket = asyncHandler(async (req: TypedRequestUser<IUser>, res: 
     throw new Error('User not found');
   }
 
-  const ticket = await Ticket.findById(req.params._id);
+  const ticket = await Ticket.findById(req.params.id);
 
   if (!ticket) {
     res.status(404);
     throw new Error('Ticket not found');
   }
 
-  if (ticket.user.toString() !== req.user?._id) {
+  if (ticket.user.toString() !== req.user?._id.toString()) {
     res.status(401);
     throw new Error('Not Authorized');
   }
@@ -90,14 +90,14 @@ export const deleteTicket = asyncHandler(async (req: TypedRequestUser<IUser>, re
     throw new Error('User not found');
   }
 
-  const ticket = await Ticket.findById(req.params._id);
+  const ticket = await Ticket.findById(req.params.id);
 
   if (!ticket) {
     res.status(404);
     throw new Error('Ticket not found');
   }
 
-  if (ticket.user.toString() !== req.user?._id) {
+  if (ticket.user.toString() !== req.user?._id.toString()) {
     res.status(401);
     throw new Error('Not Authorized');
   }
@@ -119,19 +119,19 @@ export const updateTicket = asyncHandler(async (req: TypedRequestUser<IUser>, re
     throw new Error('User not found');
   }
 
-  const ticket = await Ticket.findById(req.params._id);
+  const ticket = await Ticket.findById(req.params.id);
 
   if (!ticket) {
     res.status(404);
     throw new Error('Ticket not found');
   }
 
-  if (ticket.user.toString() !== req.user?._id) {
+  if (ticket.user.toString() !== req.user?._id.toString()) {
     res.status(401);
     throw new Error('Not Authorized');
   }
 
-  const updatedTicket = await Ticket.findByIdAndUpdate(req.params._id, req.body, { new: true });
+  const updatedTicket = await Ticket.findByIdAndUpdate(req.params.id, req.body, { new: true });
 
   res.status(200).json(updatedTicket);
 });
